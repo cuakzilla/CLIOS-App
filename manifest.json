@@ -1,0 +1,43 @@
+{
+  "name": "CLIOS -- Cognitive Life Operating System",
+  "short_name": "CLIOS",
+  "description": "Tu sistema operativo cognitivo personal. No una agenda. Una extension de tu mente.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050508",
+  "theme_color": "#0a0a12",
+  "orientation": "any",
+  "categories": ["productivity", "lifestyle", "health"],
+  "lang": "es",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='32' fill='%230a0a12'/><text x='50%' y='58%' font-family='sans-serif' font-size='100' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%236c63ff'>[hex]</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Centro de Comando",
+      "short_name": "Comando",
+      "description": "Ver la accion optima siguiente",
+      "url": "/?view=command",
+      "icons": []
+    },
+    {
+      "name": "Copiloto IA",
+      "short_name": "Copiloto",
+      "description": "Consultar al copiloto cognitivo",
+      "url": "/?view=copilot",
+      "icons": []
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "handle_links": "preferred",
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "clios-backend",
+  "version": "1.1.0",
+  "description": "CLIOS -- Cognitive Life Operating System backend functions",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "web-push": "^3.6.7"
+  },
+  "scripts": {
+    "dev": "netlify dev",
+    "deploy": "netlify deploy --prod"
+  },
+  "notes": {
+    "ANTHROPIC_API_KEY": "Requerida -- tu key de console.anthropic.com",
+    "SUPABASE_URL": "Opcional -- para sync multi-dispositivo (ej: https://xxx.supabase.co)",
+    "SUPABASE_SERVICE_KEY": "Opcional -- service_role key de Supabase (Settings > API)",
+    "VAPID_PUBLIC_KEY": "Opcional -- para push notifications (npx web-push generate-vapid-keys)",
+    "VAPID_PRIVATE_KEY": "Opcional -- par con PUBLIC_KEY",
+    "VAPID_EMAIL": "Opcional -- tu email para VAPID",
+    "ALLOWED_ORIGIN": "Opcional -- tu dominio en produccion (ej: https://tu-app.netlify.app)"
+  }
+}

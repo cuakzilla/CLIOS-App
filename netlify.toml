@@ -1,0 +1,38 @@
+# netlify.toml
+# Configuracion completa de CLIOS en Netlify
+
+[build]
+  publish = "."                          # carpeta raiz
+  functions = "netlify/functions"        # carpeta de funciones serverless
+
+# Headers de seguridad para toda la app
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Cache agresivo para assets estaticos
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"           # SW siempre fresco
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirect: el frontend llama a /api/chat -> Netlify Function
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
+
+# SPA fallback -- siempre servir index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
